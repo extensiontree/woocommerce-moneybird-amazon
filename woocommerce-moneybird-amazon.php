@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Moneybird API integration [extra Amazon settings]
+Plugin Name: Moneybird API integration [extra Amazon Marketplace settings]
 Plugin URI: https://extensiontree.com/woocommerce-moneybird-koppeling/
 Version: 1.0.0
 Author: ExtensionTree.com
 Author URI: https://extensiontree.com
-Description: Adds extra options to the Moneybird plugin for Amazon orders. Works with the Amazon integrations from Channable.
+Description: Adds extra options to the Moneybird plugin for Amazon Marketplace orders. Works with the Amazon Marketplace integrations from Channable.
 Requires at least: 3.8
 Tested up to: 7.0
 WC requires at least: 3.0
@@ -35,7 +35,7 @@ add_action('before_woocommerce_init', function () {
 
 
 if (is_plugin_active('woocommerce-moneybird/woocommerce-moneybird.php')) {
-    // Register a separate integration, so that the Amazon settings get their own settings page
+    // Register a separate integration, so that the Amazon Marketplace settings get their own settings page
     // next to the settings page of the Moneybird plugin itself.
     function insert_woocommerce_moneybird_amazon_integration($integrations)
     {
@@ -71,7 +71,7 @@ if (is_plugin_active('woocommerce-moneybird/woocommerce-moneybird.php')) {
 
 function wc_mb_amazon_get_settings()
 {
-    // Return the settings of the Amazon integration (empty array if unavailable)
+    // Return the settings of the Amazon Marketplace integration (empty array if unavailable)
     $woocommerce = WC();
     if ($woocommerce && isset($woocommerce->integrations->integrations['moneybird_amazon'])) {
         return $woocommerce->integrations->integrations['moneybird_amazon']->settings;

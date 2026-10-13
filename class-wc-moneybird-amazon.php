@@ -7,8 +7,8 @@ class WC_MoneyBird_Amazon extends WC_Integration {
 
     function __construct() {
         $this->id                 = 'moneybird_amazon';
-        $this->method_title       = 'Moneybird Amazon';
-        $this->method_description = 'Overrule de instellingen van de Moneybird koppeling voor WooCommerce bestellingen die via Amazon zijn binnengekomen.';
+        $this->method_title       = 'Moneybird Amazon Marketplace';
+        $this->method_description = 'Overrule de instellingen van de Moneybird koppeling voor WooCommerce bestellingen die via Amazon Marketplace zijn binnengekomen.';
 
         // Settings
         $this->init_settings();
@@ -78,8 +78,8 @@ class WC_MoneyBird_Amazon extends WC_Integration {
 
         $this->form_fields = array(
             'invoice_enabled' => array(
-                'title'             => 'Facturen voor Amazon bestellingen',
-                'description'       => 'Maak Moneybird facturen voor Amazon bestellingen.',
+                'title'             => 'Facturen voor Amazon Marketplace bestellingen',
+                'description'       => 'Maak Moneybird facturen voor Amazon Marketplace bestellingen.',
                 'type'              => 'select',
                 'options'           => array('yes' => 'Ja', 'no' => 'Nee'),
                 'default'           => 'yes'
@@ -92,32 +92,32 @@ class WC_MoneyBird_Amazon extends WC_Integration {
                 'default'           => isset($mb->settings['invoice_reference']) ? $mb->settings['invoice_reference'] : __('Order #{{order_id}}', 'woocommerce_moneybird'),
             ),
             'workflow_id' => array(
-                'title'             => 'Workflow Amazon bestellingen',
+                'title'             => 'Workflow Amazon Marketplace bestellingen',
                 'type'              => 'select',
                 'options'           => $workflows,
                 'default'           => '',
             ),
             'document_style_id' => array(
-                'title'             => 'Huisstijl Amazon bestellingen',
+                'title'             => 'Huisstijl Amazon Marketplace bestellingen',
                 'type'              => 'select',
                 'options'           => $document_styles,
                 'default'           => '',
             ),
             'revenue_ledger_account_id' => array(
-                'title'             => 'Omzetcategorie Amazon bestellingen',
+                'title'             => 'Omzetcategorie Amazon Marketplace bestellingen',
                 'type'              => 'select',
-                'description'       => 'Overrule omzetcategorie voor alle factuurregels voor Amazon bestellingen.',
+                'description'       => 'Overrule omzetcategorie voor alle factuurregels voor Amazon Marketplace bestellingen.',
                 'options'           => $ledger_accounts,
                 'default'           => '',
             ),
             'always_mark_paid' => array(
                 'title'             => 'Altijd als betaald markeren',
-                'label'             => 'Markeer facturen voor Amazon bestellingen altijd als betaald.',
+                'label'             => 'Markeer facturen voor Amazon Marketplace bestellingen altijd als betaald.',
                 'type'              => 'checkbox',
             ),
             'never_send' => array(
                 'title'             => 'Factuur niet verzenden',
-                'label'             => 'Verstuur facturen voor Amazon bestellingen nooit naar de klant.',
+                'label'             => 'Verstuur facturen voor Amazon Marketplace bestellingen nooit naar de klant.',
                 'type'              => 'checkbox',
             ),
         );
